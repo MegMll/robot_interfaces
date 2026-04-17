@@ -189,4 +189,16 @@ namespace robot_interfaces
     // Returns Coriolis + Gravity: b(q, v)
     return pinocchio::nonLinearEffects(model, data, q, v);
   }
+
+  Eigen::MatrixXd GenericComponent::getCoriolisMatrix() const
+  {
+    // Returns Coriolis Matrix C
+    return pinocchio::computeCoriolisMatrix(model, data, q, v);
+  }
+
+  Eigen::VectorXd GenericComponent::getGravityEffort() const
+  {
+    // Returns Gravity
+    return pinocchio::computeGeneralizedGravity(model, data, q);
+  }
 } // namespace robot_interfaces

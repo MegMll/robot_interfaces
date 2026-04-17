@@ -82,6 +82,8 @@ namespace robot_interfaces
     Eigen::MatrixXd getEndEffectorJacobian() const;
     Eigen::MatrixXd getMassMatrix() const;
     Eigen::VectorXd getNonLinearEffects() const;
+    Eigen::MatrixXd getCoriolisMatrix() const;
+    Eigen::VectorXd getGravityEffort() const;
 
     const Eigen::VectorXd &getJointPositions() const
     {
